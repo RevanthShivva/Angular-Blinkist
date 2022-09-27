@@ -1,0 +1,72 @@
+<app-explorenav *ngIf="isExploreEnabled"></app-explorenav>
+<div style="margin-left: 264px; margin-right: 260px;">
+  <input
+    style="width: 60%; margin-left: 30px"
+    placeholder="Search for the book"
+    *ngIf="isSearchEnabled"
+    type="text"
+    [(ngModel)]="filteredStatus"
+  />
+ 
+  <h1
+    style="
+      font-family: 'Cera Pro';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 45px;
+      color: #03314b;
+      margin-top: 40px;
+      margin-bottom: 60px;
+      margin-left: 30px;
+    "
+  >
+    My Library
+  </h1>
+
+  <mat-tab-group mat-align-tabs="start" style="margin-left: 30px">
+    <mat-tab label="Currently Reading">
+      <div style="margin-left: -32px; margin-top: 20px">
+        <ul
+          *ngFor="let book of bookData | filter: filteredStatus:'title'"
+          class="list-group"
+          style="display: inline-block"
+        >
+          <app-book *ngIf="book.isReading" [singleBook]="book"></app-book>
+        </ul>
+      </div>
+    </mat-tab>
+    <mat-tab label="Finished">
+      <div style="margin-left: -12px; margin-top: 20px">
+      <ul
+        *ngFor="let book of bookData | filter: filteredStatus:'title'"
+        class="list-group"
+        style="display: inline-block"
+      >
+        <!-- <div style="padding: 10px;" > -->
+        <app-book *ngIf="book.isFinished" [singleBook]="book"></app-book>
+      </ul>
+    </div>
+    </mat-tab>
+  </mat-tab-group>
+
+  <!-- <ul class="list-group" style="margin-left : 264px; margin-right: 260px;">
+
+   
+<app-book style="display: inline-block;
+                margin-left: 30px;margin-bottom: 30px;"
+ *ngFor="let book of bookData" [singleBook]="book"></app-book>
+
+</ul>
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="First">Content 1</mat-tab>
+    <mat-tab label="Second">Content 2</mat-tab>
+</mat-tab-group> -->
+  <!-- <ul  class="list-group"   *ngFor="let book of bookData" style="display: inline-block; margin-left: 30px; margin-bottom: 30px" >
+  <app-book
+   
+   
+    [singleBook]="book"
+  ></app-book></ul
+> -->
+</div>

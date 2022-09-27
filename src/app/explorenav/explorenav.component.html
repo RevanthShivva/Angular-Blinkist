@@ -1,0 +1,25 @@
+<div class="principle">
+    <div class="maindiv">
+        <div class="firstBox">
+            <p class="highlight">Explore by category</p>
+            <p style="margin-left: 160px;font-family: 'Cera Pro';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 16px;
+              line-height: 20px;
+              color: #6D787E;">See recently added titles</p>
+            <p style="margin-left: 180px;font-family: 'Cera Pro';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            color: #6D787E;">See popular titles</p>
+        </div>
+        <br>
+        <div class="secondBox">
+         <div *ngFor="let nav of navData;" style="width: 200px">
+            <app-nav [navData] = nav class="navItem"></app-nav>
+         </div>
+        </div>
+    </div>
+</div>

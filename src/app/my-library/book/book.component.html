@@ -1,0 +1,148 @@
+<mat-card
+  class="example-card"
+  style="
+    width: 284px;
+    background: #ffffff;
+    border: 1px solid #e1ecfc;
+    border-radius: 8px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    border-bottom: #fff;
+  "
+>
+  <img
+    mat-card-image
+    src="{{ singleBook.image }}"
+    style="width: 284px; height: 284px"
+  />
+  <mat-card-content>
+    <p
+      style="
+        font-family: 'Cera Pro';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 23px;
+        color: #03314b;
+
+        margin-right: 16px;
+      "
+    >
+      {{ singleBook.title }}
+    </p>
+  </mat-card-content>
+  <mat-card-content>
+    <p
+      style="
+        font-family: 'Cera Pro';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #6d787e;
+        margin-right: 16px;
+      "
+    >
+      {{ singleBook.author }}
+    </p>
+  </mat-card-content>
+  <div class="parent1">
+    <div class="child1">
+      <div class="parent">
+        <div class="child">
+          <img
+            src="../../../assets/Vector.jpg"
+            style="width: 16px; height: 16px"
+          />
+        </div>
+        <div class="child">
+          <p
+            style="
+              font-family: 'Cera Pro';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 18px;
+              color: #6d787e;
+              margin-top: 13px;
+              margin-left: 6px;
+            "
+          >
+            {{ singleBook.timeToRead }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="child1" style="margin-left: 45px">
+      <div class="parent">
+        <div class="child">
+          <img
+            src="../../../assets/Vector1.jpg"
+            style="width: 16px; height: 16px"
+          />
+        </div>
+        <div class="child">
+          <p
+            style="
+              font-family: 'Cera Pro';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 18px;
+              color: #6d787e;
+              margin-top: 13px;
+              margin-left: 6px;
+            "
+          >
+            {{ singleBook.numberOfReads }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-card-actions>
+    <button
+      (click)="onFinished()"
+      mat-button
+      *ngIf="singleBook.isReading"
+      style="
+        width: 100%;
+        background-color: transparent;
+        border: #e1ecfc;
+        color: #0365f2;
+      "
+    >
+      Finished
+    </button>
+    <button
+      (click)="onReading()"
+      mat-button
+      *ngIf="singleBook.isFinished"
+      style="
+        width: 100%;
+        background-color: transparent;
+        border: #e1ecfc;
+        color: #0365f2;
+      "
+    >
+      Read Again
+    </button>
+  </mat-card-actions>
+  <mat-card-footer style="margin-bottom: -37px">
+    <div *ngIf="singleBook.isReading" class="progress" style="height: 15px">
+      <div
+        class="progress-bar bg-info"
+        role="progressbar"
+        style="width: 35%; background-color: #e1ecfc !important"
+      ></div>
+    </div>
+      <div *ngIf="singleBook.isFinished" class="progress" style="height: 15px">
+        <div
+          class="progress-bar bg-info"
+          role="progressbar"
+          style="width: 100%; background-color: #e1ecfc !important"
+        ></div>
+    </div>
+    
+  </mat-card-footer>
+</mat-card>

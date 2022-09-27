@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Cera Pro';
+    src: 
+        url('src/assets/fonts/CeraPro-Light.woff') format('woff');
+       
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Cera Pro';
+    src:
+        url('src/assets/fonts/CeraPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src:
+        url('src/assets/fonts/CeraPro-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: 
+        url('src/assets/fonts/CeraPro-Medium.woff') format('woff');
+       
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
